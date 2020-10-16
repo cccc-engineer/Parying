@@ -4,7 +4,7 @@ https://cccc-engineer.github.io/Praying/
 
 [How to start this project?]
 
-1. Start backend server
+1.  Start backend server
   - cd mybackend
   - node app.js
 
