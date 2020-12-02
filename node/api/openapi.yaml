@@ -8,7 +8,7 @@ info:
     name: AllRightsReserved
     url: http://localhost:8080/
   title: CCCC Praying API
-  version: 1.0.15
+  version: 1.0.21
 
 servers:
 - url: http://localhost:8080/api
@@ -17,7 +17,7 @@ security:
 - bearerAuth: []
 
 paths:  
-  /getAllUsers:
+  /getAllPlayers:
     get:
       operationId: getAllPlayers 
       responses:
@@ -31,8 +31,9 @@ paths:
           content: {}
           description: bad input parameter
       x-openapi-router-controller: DefaultController
-      x-openapi-router-service: DefaultService    
-
+      x-openapi-router-service: DefaultService   
+ 
+ 
   /getPlayer:
     get:
       operationId: getPlayerGET
@@ -51,7 +52,7 @@ paths:
             '*/*':
               schema:
                 items:
-                  $ref: '#/components/schemas/CCCCUser'
+                  $ref: '#/components/schemas/Group6User'
                 type: array
           description: search results matching criteria
         "400":
@@ -59,9 +60,9 @@ paths:
           description: bad input parameter
       x-openapi-router-controller: DefaultController
       x-openapi-router-service: DefaultService
-  
  
- 
+          
+   
   /NewPlayer:
     post:
       description: Adds a player to the system
@@ -117,37 +118,8 @@ paths:
           description: description=409
       summary: api/login
       x-openapi-router-controller: DefaultController
-      x-openapi-router-service: DefaultService
-  
-
-  /adminSignIn:
-    post:
-      description: admin sign in
-      operationId: adminSignIn
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/adminSignInInfo'
-        description: admin sign in
-        required: false
-      security: []
-      responses:
-        "201":
-          content: {}
-          description: admin sign in
-        "400":
-          content: {}
-          description: invalid input, object invalid
-        "409":
-          content: {}
-          description: error!
-      summary: api/adminSignIn
-      tags:
-      - admins
-      x-openapi-router-controller: AdminsController
-      x-openapi-router-service: AdminsService
-
+      x-openapi-router-service: DefaultService 
+      
   /reset:
     post:
       description: admin reset database.
@@ -183,13 +155,13 @@ components:
     reqInf4Reset:
       example:
         ID: 1
-        sql: Drop table tbName
+        sql: Drop table group6User
       properties:
         ID:
           example: 1
           type: integer
         sql:
-          example: Drop table tbName
+          example: Drop table group6User
           type: string
       required: 
       - ID  
@@ -313,7 +285,7 @@ components:
           type: number
         str:
           items:
-            $ref: '#/components/schemas/CCCCUser'
+            $ref: '#/components/schemas/ResUserInfo'
           type: array
 
     SignupResInf:
@@ -330,17 +302,16 @@ components:
       required: 
       - code  
       type: object 
-
-    CCCCUser:
+    Group6User:
       example:
         UserID: d290f1ee-6c54-4b01-90e6-d701748f0851
-        UserName: userName
+        UserName: Nes Cohen
         Password: 123abc
         coin: 0
         gem: 0
-        FirstName: userName
-        LastName: userName
-        EmailAddress: 123abc@livepraying.com
+        FirstName: Nes
+        LastName: Cohen
+        EmailAddress: 123abc@group6.com
         Location: wids132 at 3ewed
         Coins: 100
         gems: 10
@@ -349,7 +320,7 @@ components:
           example: d290f1ee-6c54-4b01-90e6-d701748f0851
           type: string
         UserName:
-          example: userName
+          example: Nes Cohen
           type: string
         Password:
           example: 123abc
@@ -361,13 +332,13 @@ components:
           example: 0
           type: number
         FirstName:
-          example: userName
+          example: Nes
           type: string
         LastName:
-          example: userName
+          example: Cohen
           type: string
         EmailAddress:
-          example: 123abc@test.com
+          example: 123abc@group6.com
           type: string
         Location:
           example: wids132 at 3ewed
@@ -388,4 +359,57 @@ components:
       - Password
       - UserID
       - UserName
-      type: object 
+      type: object
+    ResUserInfo:
+      example:
+        UserID: d290f1ee-6c54-4b01-90e6-d701748f0851
+        UserName: Group6User  
+        Version: 0.0.1
+      properties:
+        UserID:
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+          type: string
+        UserName:
+          example: Nes Cohen
+          type: string     
+        Version:
+          example: 0.0.1
+          type: string
+      required: 
+      - UserID
+      - UserName
+      - Version
+      type: object
+    Group6Game:
+      example:
+        id: d290f1ee-6c54-4b01-90e6-d701748f0851
+        competitor_1: -1507897597
+        competitor_2: -1507897598
+        start_time: 2020-01-01 00:00:01
+        end_time: 2020-01-01 00:05:01
+        winner: -1507897598
+      properties:
+        GameID:
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+          format: uuid
+          type: string
+        competitor_1:
+          example: -1507897597
+          type: integer
+        competitor_2:
+          example: -1507897598
+          type: integer
+        winner:
+          example: -1507897598
+          type: integer
+      required:
+      - competitor_1
+      - competitor_2
+      - id
+      - winner
+      type: object
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes
