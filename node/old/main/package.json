@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall" : "cd node_modules/canvas && /usr/bin/node /usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js rebuild"
- 
+    "postinstall" : "cd node_modules/canvas && /usr/bin/node /usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js rebuild", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
