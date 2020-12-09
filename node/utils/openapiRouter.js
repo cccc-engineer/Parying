@@ -1,7 +1,6 @@
 const logger = require('../logger');
 const controllers = require('../controllers');
 const Services = require('../services');
-const token = require('../auth/token');
 
 function handleError(err, request, response, next) {
   logger.error(err);
@@ -44,7 +43,6 @@ function openApiRouter() {
         next();
         return;
       }
-
       // request.swagger.paramValues = {};
       // request.swagger.params.forEach((param) => {
       //   request.swagger.paramValues[param.name] = getValueFromRequest(request, param);
@@ -57,18 +55,8 @@ function openApiRouter() {
       } else {
         const apiController = new controllers[controllerName](Services[serviceName]);
         const controllerOperation = request.openapi.schema.operationId;
-        console.log("**** controllerOperation = " + controllerOperation);
-        if(controllerOperation==="loginTest" 
-        || "addPlayer"===controllerOperation)
-        {
-          await apiController[controllerOperation](request, response, next);
-        }
-        else{
-          token.verify(request,response,async function(){
-            await apiController[controllerOperation](request, response, next);
-          });    
-        }
-
+        console.log("**** controllerOperation=" + controllerOperation);
+        await apiController[controllerOperation](request, response, next);
       }
     } catch (error) {
       console.error(error);

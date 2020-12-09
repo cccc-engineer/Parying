@@ -15,7 +15,7 @@ const config = require('./config');
 
 const blOld = require('./old/index');
 
-console.log(tag + "config.PRODUCTION=" + config.PRODUCTION);     
+console.log(tag);     
  
 const token = require('./auth/token');
 
@@ -38,7 +38,13 @@ class ExpressServer {
       apiSpecPath: this.openApiPath,
     }).install(this.app);
 
+	// verify authentitcation for all api endpoints
+    this.app.use('/api', token.verify);
+
+
+	// OpenAPI Router for api.yaml file
     this.app.use(openapiRouter());
+
 
 	if (!config.PRODUCTION) { // development paths, disable for production
       this.app.get('/login-redirect', (req, res) => {
@@ -62,9 +68,6 @@ class ExpressServer {
         //res.end('Hello Group6.');
       });
       this.app.use('/old',blOld.fOld);
-      
-      this.app.use('/api', token.verify); 
-
       this.app.use('/spec', express.static(path.join(__dirname, 'api')));
       this.app.get('/hello', (req, res) => res.send('Hello World. path: '+this.openApiPath));
       this.app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(this.schema));
