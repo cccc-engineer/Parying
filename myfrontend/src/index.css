@@ -7,32 +7,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 ;
+}
+
+
 header .header-image{
-  position: absolute;
   width: 135px;
   height: 111px;
-  left: 102px;
-  top: 34px;
-  /*background: url(https://cliparting.com/wp-content/uploads/2018/03/cross-pictures-2018-29.jpg);*/
 }
 .header-image img{
   width: 100px;
   height: 100px;
   border: 2px solid black;
   margin: 3px 5px;
-  position: absolute;
-  top: -30px;
 }
 header .pray{
-  position: absolute;
   width: 174px;
   height: 30px;
-  left: 329px;
-  top: 50px;
   font-family: Open Sans Condensed;
   font-style: normal;
   font-weight: 300;
@@ -42,11 +42,8 @@ header .pray{
   color: #000000;
 }
 header .about-us{
-  position: absolute;
   width: 174px;
   height: 30px;
-  left: 570px;
-  top: 50px;
   font-family: Open Sans Condensed;
   font-style: normal;
   font-weight: 300;
@@ -56,11 +53,7 @@ header .about-us{
   color: #000000;
 }
 header .testimony-board{
-  position: absolute;
-  width: 174px;
   height: 30px;
-  left: 850px;
-  top: 50px;
   font-family: Open Sans Condensed;
   font-style: normal;
   font-weight: 300;
@@ -70,11 +63,8 @@ header .testimony-board{
   color: #000000;
 }
 header .church{
-  position: absolute;
   width: 174px;
   height: 30px;
-  left: 1100px;
-  top: 50px;
   font-family: Open Sans Condensed;
   font-style: normal;
   font-weight: 300;
@@ -84,53 +74,58 @@ header .church{
   color: #000000;
 }
 header .login{
-  position: absolute;
   width: 100px;
   height: 75px;
-  left: 1400px;
-  top: 25px;
   padding: 25px 20px;
   font-family: Open Sans Condensed;
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
-  line-height: 33px;
+  /* line-height: 33px; */
   text-align: center;
   color: #000000;
-  border: 1px solid #C4C4C4;
+  /* border: 1px solid #C4C4C4; */
   box-sizing: border-box;
-  background: #C4C4C4;
-  clip-path: polygon(50% 0, 100% 40%, 100% 100%, 0 100%, 0 40%);
+  background: #5ffa86;
+  /* clip-path: polygon(50% 0, 100% 40%, 100% 100%, 0 100%, 0 40%); */
+  border: 3px solid black;  
+  transition: all 1s linear ;
+}
+
+header .login:hover{
+  background-color: crimson;
 }
 
 header{
-  position: absolute;
-  width: 1620px;
+  position: relative;
+  width: 96%;
   height: 121px;
-  left: 25px;
-  top: 30px;
+  margin: 25px 50px 2% 2%;
   background: #F9E95E;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  align-content:center;
+  justify-content: space-around;
 }
 .body-content{
-  position: absolute;
-  width: 1620px;
+  position: relative;
+  width: 96%;
   height: 700px;
-  left: 25px;
-  top: 166px;
+  margin: 25px 50px 2% 2%;
+  border: 1px solid #000000;
   background: #FECBA6;
   border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .body-content .match-button{
-  
-  position: absolute;
   width: 300px;
   height: 300px;
   padding: 120px 10px;
-  left: 690px;
-  top: 150px;
   font-family: Open Sans Condensed;
   font-style: normal;
   font-weight: 300;
@@ -143,8 +138,14 @@ header{
   box-sizing: border-box; 
   border-radius: 50%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+  transition: all 1s linear;
 }
+
+.body-content .match-button:hover{
+  background-color: lightsalmon;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 79px 57px rgba(0, 0, 0, 0.14);
+}
+
 .footer{
   position: absolute;
   bottom: 5px;
@@ -158,3 +159,5 @@ header{
   width: 1620px;
   height: 50px;
 }
+
+
