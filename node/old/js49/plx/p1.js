@@ -1,4 +1,4 @@
-const tag = "[old/js49/plx/p1.js_v0.151]";
+const tag = "[old/js49/plx/p1.js_v0.152]";
 const p1Btn = bl$("id_plx1_btn");  
  
 var vBreakNews = null;  
@@ -242,7 +242,7 @@ function CTest(){
                         var u = bl$("idUser");
                         var pw = bl$("idPW");
                         var settings = {
-                            "url": "http://localhost:8080/api/NewPlayer",
+                            "url": "http://livingpraying:8080/api/NewPlayer",
                             "method": "POST",
                             "timeout": 0,
                             "headers": {
@@ -272,7 +272,7 @@ function CTest(){
                     var u = bl$("idUser");
                     var pw = bl$("idPW");
                     var settings = {
-                        "url": "http://localhost:8080/api/login",
+                        "url": "http://livingpraying:8080/api/login",
                         "method": "POST",
                         "timeout": 0,
                         "headers": {
@@ -342,7 +342,7 @@ function CTest(){
                             
                             tb1.btnConnect = blo0.blBtn(tb1,tb1.id+"btnConnect","connect",blGrey[1]);
                             tb1.btnConnect.onclick = function(){
-                                var url = "ws://localhost:9090?";
+                                var url = "ws://livingpraying:9090?";
                                 url += "userName="+btnLogin.userName;
                                 url += "&userID="+btnLogin.userID;
                                 url += "&token="+btnLogin.token;
@@ -407,7 +407,7 @@ function addFun1(_tb,_btn){
             tb.b1 = blo0.blBtn(tb,tb.id+"b1","allPlayers",blGrey[0]);
             tb.b1.onclick = function(){
                 var settings = {
-                    "url": "http://localhost:8080/api/getAllPlayers",
+                    "url": "http://livingpraying:8080/api/getAllPlayers",
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
@@ -435,7 +435,7 @@ function addFun1(_tb,_btn){
                             return function(){
                                 
                                 var settings = {
-                                    "url": "http://localhost:8080/api/RequestToMakeFriend",
+                                    "url": "http://livingpraying:8080/api/RequestToMakeFriend",
                                     "method": "POST",
                                     "timeout": 0,
                                     "headers": {
@@ -463,7 +463,7 @@ function addFun1(_tb,_btn){
             tb.b2.onclick = function(){
                 v.innerHTML = "pendingFriends:";
                 var settings = {
-                    "url": "http://localhost:8080/api/getPendingFriends",
+                    "url": "http://livingpraying:8080/api/getPendingFriends",
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
@@ -510,7 +510,7 @@ function addFun1(_tb,_btn){
                             b3.onclick = b4.onclick = function(_oi){
                                 return function(){
                                     var settings = {
-                                        "url": "http://localhost:8080/api/ReponseToMakeFriend",
+                                        "url": "http://livingpraying:8080/api/ReponseToMakeFriend",
                                         "method": "POST",
                                         "timeout": 0,
                                         "headers": {
@@ -534,7 +534,7 @@ function addFun1(_tb,_btn){
             tb.b3.onclick = function(){
                 v.innerHTML = "Friends:";
                 var settings = {
-                    "url": "http://localhost:8080/api/getFriends",
+                    "url": "http://livingpraying:8080/api/getFriends",
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
