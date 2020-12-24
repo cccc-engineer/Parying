@@ -1,1 +1,1 @@
-curl -X POST "http://localhost:3000/api/addUser" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"id\": \"c1\", \"name\": \"group6\", \"releaseDate\": {}, \"manufacturer\": { \"name\": \"ACME Corporation\", \"homePage\": \"https://www.acme-corp.com\", \"phone\": \"408-867-5309\" }}"
+curl -X POST "http://livingpraying.org:8080/api/NewPlayer" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"UserName\":\"aaa\",\"Password\":\"aaa\"}"
