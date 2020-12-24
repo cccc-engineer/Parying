@@ -19,32 +19,47 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+import Route from "react-router-dom/Route";
+import { BrowserRouter as Router } from "react-router-dom";
+import { MatchButton } from "./components/MatchButton";
+import Login from "./components/Login";
+
 class Body extends React.Component {
   render() {
     return (
-      <body>
-        <header>
-          <div class="header-image">
-            <img
-              src="https://cliparting.com/wp-content/uploads/2018/03/cross-pictures-2018-29.jpg"
-              alt="cross"
-            />
-          </div>
-          <div class="pray">Pray</div>
-          <div class="about-us">About Us</div>
-          <div class="testimony-board">Testimony Board</div>
-          <div class="church">Church</div>
-          <div class="login">Login</div>
-        </header>
-        <main class="body-content">
-          <div class="match-button">Start Matching</div>
-        </main>
-        {/* <footer>
-          <div class="footer">footer</div>
-        </footer> */}
-      </body>
+      <Router>
+        <body>
+          <header>
+            <div class="header-image">
+              <img
+                src="https://cliparting.com/wp-content/uploads/2018/03/cross-pictures-2018-29.jpg"
+                alt="cross"
+              />
+            </div>
+            <div class="pray">
+              <a href="/">Pray</a>
+            </div>
+            <div class="about-us">About Us</div>
+            <div class="testimony-board">Testimony Board</div>
+            <div class="church">Church</div>
+            <div class="login">
+              <a href="/login">Login</a>
+            </div>
+          </header>
+          <main class="body-content">
+            <Route path="/" exact component={MatchButton}></Route>
+            <Route path="/login" component={Login}></Route>
+          </main>
+        </body>
+      </Router>
     );
   }
 }
 
-ReactDOM.render(<Body />, document.getElementById("root"));
+// ReactDOM.render(<Body />, document.getElementById("root"));
+ReactDOM.render(
+  <React.StrictMode>
+    <Body />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
