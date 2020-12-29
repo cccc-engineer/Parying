@@ -1,3 +1,11 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from "./App";
+import "./index.css";
+
+ReactDOM.render(
+    <App />, document.getElementById('root')
+);
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 // import './index.css';
@@ -15,7 +23,7 @@
 // // unregister() to register() below. Note this comes with some pitfalls.
 // // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
-import React from "react";
+/*import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
@@ -27,6 +35,8 @@ import Login from "./components/Login";
 class Body extends React.Component {
   render() {
     return (
+
+
       <Router>
         <body>
           <header>
@@ -52,14 +62,9 @@ class Body extends React.Component {
           </main>
         </body>
       </Router>
+
     );
   }
-}
+}*/
 
-// ReactDOM.render(<Body />, document.getElementById("root"));
-ReactDOM.render(
-  <React.StrictMode>
-    <Body />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+
