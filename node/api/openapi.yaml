@@ -6,12 +6,12 @@ info:
   description: CCCC Praying API
   license:
     name: AllRightsReserved
-    url: http://localhost:8080/
+    url: http://livingpraying.org:8080/
   title: CCCC Praying API
   version: 1.0.21
 
 servers:
-- url: http://localhost:8080/api
+- url: http://livingpraying.org:8080/api
 
 security:
 - bearerAuth: []
