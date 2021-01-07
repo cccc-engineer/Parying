@@ -1,4 +1,5 @@
-const tag = "[old/js49/plx/p1.js_v0.151]";
+const tag = "[old/js49/plx/p1.js_v0.152]";
+const _URL_BASE = "http://localhost:8080";
 const p1Btn = bl$("id_plx1_btn");  
  
 var vBreakNews = null;  
@@ -242,7 +243,7 @@ function CTest(){
                         var u = bl$("idUser");
                         var pw = bl$("idPW");
                         var settings = {
-                            "url": "http://localhost:3000/api/NewPlayer",
+                            "url": _URL_BASE +"/api/NewPlayer",
                             "method": "POST",
                             "timeout": 0,
                             "headers": {
@@ -272,7 +273,7 @@ function CTest(){
                     var u = bl$("idUser");
                     var pw = bl$("idPW");
                     var settings = {
-                        "url": "http://localhost:3000/api/login",
+                        "url": _URL_BASE + "/api/login",
                         "method": "POST",
                         "timeout": 0,
                         "headers": {
@@ -407,7 +408,7 @@ function addFun1(_tb,_btn){
             tb.b1 = blo0.blBtn(tb,tb.id+"b1","allPlayers",blGrey[0]);
             tb.b1.onclick = function(){
                 var settings = {
-                    "url": "http://localhost:3000/api/getAllPlayers",
+                    "url": _URL_BASE + "/api/getAllPlayers",
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
@@ -463,7 +464,7 @@ function addFun1(_tb,_btn){
             tb.b2.onclick = function(){
                 v.innerHTML = "pendingFriends:";
                 var settings = {
-                    "url": "http://localhost:3000/api/getPendingFriends",
+                    "url": _URL_BASE + "/api/getPendingFriends",
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
@@ -510,7 +511,7 @@ function addFun1(_tb,_btn){
                             b3.onclick = b4.onclick = function(_oi){
                                 return function(){
                                     var settings = {
-                                        "url": "http://localhost:3000/api/ReponseToMakeFriend",
+                                        "url": _URL_BASE + "/api/ReponseToMakeFriend",
                                         "method": "POST",
                                         "timeout": 0,
                                         "headers": {
@@ -534,7 +535,7 @@ function addFun1(_tb,_btn){
             tb.b3.onclick = function(){
                 v.innerHTML = "Friends:";
                 var settings = {
-                    "url": "http://localhost:3000/api/getFriends",
+                    "url": _URL_BASE + "/api/getFriends",
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
