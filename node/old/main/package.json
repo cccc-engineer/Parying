@@ -1,0 +1,15 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall" : "cd node_modules/canvas && /usr/bin/node /usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js rebuild", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

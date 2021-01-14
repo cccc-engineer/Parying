@@ -1,0 +1,5 @@
+pm2 status
+pm2 kill
+pm2 start index.js
+pm2 restart
+https://pm2.keymetrics.io/
