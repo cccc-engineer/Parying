@@ -6,7 +6,7 @@ check out our organization forum website:https://lihaoz8.wixsite.com/main/blog
 
 [How to start this project?]
 
-1. Start backend server
+1.  Start backend server
   - cd mybackend
   - node app.js
 
